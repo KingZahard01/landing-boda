@@ -17,10 +17,10 @@ const RSVP: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     addRSVP(formData);
     setIsSubmitted(true);
     setIsSubmitting(false);
@@ -30,8 +30,8 @@ const RSVP: React.FC = () => {
     const { name, value, type } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : 
-              type === 'number' ? parseInt(value) : value
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked :
+        type === 'number' ? parseInt(value) : value
     }));
   };
 
@@ -51,7 +51,7 @@ const RSVP: React.FC = () => {
             <p className="text-gray-600 mb-6">
               Gracias por confirmar tu asistencia. Estamos emocionados de compartir este día especial contigo.
             </p>
-            <button 
+            <button
               onClick={() => {
                 setIsSubmitted(false);
                 setFormData({
@@ -79,7 +79,7 @@ const RSVP: React.FC = () => {
         <h2 className="text-4xl md:text-5xl font-serif text-center text-gray-800 mb-16">
           Confirmación de Asistencia
         </h2>
-        
+
         <div className="bg-white rounded-lg shadow-lg p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
@@ -97,8 +97,8 @@ const RSVP: React.FC = () => {
                 placeholder="Tu nombre completo"
               />
             </div>
-            
-            <div>
+
+            {/* <div>
               <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                 Email *
               </label>
@@ -112,8 +112,8 @@ const RSVP: React.FC = () => {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 placeholder="tu@email.com"
               />
-            </div>
-            
+            </div> */}
+
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-3">
                 ¿Asistirás a nuestra boda? *
@@ -143,10 +143,10 @@ const RSVP: React.FC = () => {
                 </label>
               </div>
             </div>
-            
+
             {formData.attending && (
               <>
-                <div>
+                {/* <div>
                   <label htmlFor="numberOfGuests" className="block text-sm font-semibold text-gray-700 mb-2">
                     Número de invitados (incluyéndote)
                   </label>
@@ -161,9 +161,9 @@ const RSVP: React.FC = () => {
                       <option key={num} value={num}>{num} {num === 1 ? 'persona' : 'personas'}</option>
                     ))}
                   </select>
-                </div>
-                
-                <div>
+                </div> */}
+
+                {/* <div>
                   <label htmlFor="dietaryRestrictions" className="block text-sm font-semibold text-gray-700 mb-2">
                     Restricciones alimentarias o alergias
                   </label>
@@ -176,8 +176,8 @@ const RSVP: React.FC = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                     placeholder="Por favor, comparte cualquier restricción alimentaria..."
                   />
-                </div>
-                
+                </div> */}
+
                 <div>
                   <label htmlFor="songSuggestions" className="block text-sm font-semibold text-gray-700 mb-2">
                     Sugerencias de canciones para la fiesta
@@ -194,7 +194,7 @@ const RSVP: React.FC = () => {
                 </div>
               </>
             )}
-            
+
             <button
               type="submit"
               disabled={isSubmitting}
