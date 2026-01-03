@@ -13,7 +13,7 @@ interface WeddingContextType {
 
 const defaultWeddingData: WeddingData = {
   coupleNames: 'Eva & Juan',
-  weddingDate: '2026-11-27',
+  weddingDate: '2026-11-28',
   venue: 'Iglesia Lirio de los Valles',
   venueAddress: 'Calle 3 Deportes, La Atravesada',
   ceremonyTime: '4:00 PM',
