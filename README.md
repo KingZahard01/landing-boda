@@ -6,17 +6,12 @@ Un sistema completo para crear sitios web de bodas personalizados. Permite a las
 
 ### 🏠 Landing Page Pública
 - **Hero Section**: Imagen de portada con nombres de los novios, fecha y cuenta regresiva
-- **Nuestra Historia**: Sección personalizable para contar la historia de amor
 - **Información del Evento**: Detalles de ceremonia, recepción y ubicación
-- **Galería de Fotos**: Colección de imágenes con vista ampliada
 - **RSVP**: Sistema de confirmación de asistencia con formulario inteligente
-- **Mesa de Regalos**: Lista de regalos y datos bancarios para contribuciones
 
 ### ⚙️ Panel de Administración
 - **Gestión de Contenido**: Editor para todos los datos de la boda
 - **Vista de RSVP**: Dashboard con estadísticas de confirmaciones
-- **Galería**: Gestión de imágenes con ordenamiento
-- **Lista de Regalos**: Control de estado de regalos
 - **Configuración**: Herramientas para compartir y previsualizar
 
 ## 🎨 Temas y Personalización
@@ -31,7 +26,6 @@ Un sistema completo para crear sitios web de bodas personalizados. Permite a las
 - **Single Page Application**: Navegación fluida sin recargas
 - **Estado Global**: Gestión centralizada con React Context
 - **Formularios Interactivos**: Validación en tiempo real
-- **Galería Avanzada**: Vista modal y organización en cuadrícula
 - **Animaciones Suaves**: Transiciones y efectos elegantes
 
 ## 🚀 Tecnologías Utilizadas
@@ -64,11 +58,8 @@ pnpm preview
 src/
 ├── components/           # Componentes React
 │   ├── Hero.tsx         # Sección hero de la landing
-│   ├── OurStory.tsx     # Historia de amor
 │   ├── EventInfo.tsx    # Información del evento
-│   ├── Gallery.tsx      # Galería de fotos
 │   ├── RSVP.tsx         # Sistema de confirmaciones
-│   ├── GiftRegistry.tsx # Mesa de regalos
 │   ├── Footer.tsx       # Pie de página
 │   ├── PublicLanding.tsx # Landing page completa
 │   ├── AdminPanel.tsx   # Panel de administración
@@ -110,12 +101,9 @@ src/
 
 ## 🌟 Características Futuras
 
-- [ ] Sistema de autenticación
 - [ ] Subida de archivos/imágenes
-- [ ] Integración con redes sociales
 - [ ] Más temas y personalizaciones
 - [ ] Exportación de datos RSVP
-- [ ] Notificaciones por email
 - [ ] PWA (Progressive Web App)
 - [ ] Multiidioma
 

@@ -19,7 +19,7 @@ const defaultWeddingData: WeddingData = {
   ceremonyTime: '4:00 PM',
   receptionTime: '7:00 PM',
   dressCode: 'Formal',
-  coverImage: '',
+  coverImage: '../public/fondo1.jpg',
   loveStory: 'Nos conocimos en una playa...',
   images: [],
   giftList: [],
