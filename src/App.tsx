@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { WeddingProvider } from './contexts/WeddingContext';
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 import PublicLanding from './components/PublicLanding';
 // import AdminPanel from './components/AdminPanel';
 
 function App() {
   const [isAdminMode, setIsAdminMode] = useState(false);
 
-  const toggleMode = () => {
-    setIsAdminMode(!isAdminMode);
-  };
+  // const toggleMode = () => {
+  //   setIsAdminMode(!isAdminMode);
+  // };
 
   return (
     <WeddingProvider>
