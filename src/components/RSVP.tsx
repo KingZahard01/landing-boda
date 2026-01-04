@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useWedding } from '../contexts/WeddingContext';
+// import { useWedding } from '../contexts/WeddingContext';
+import { supabase } from '../lib/supabase';
 
 const RSVP: React.FC = () => {
-  const { weddingData, addRSVP } = useWedding();
+  // const { addRSVP } = useWedding();
   const [formData, setFormData] = useState({
     guestName: '',
     email: '',
@@ -13,17 +14,37 @@ const RSVP: React.FC = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const { error: supabaseError } = await supabase
+        .from('rsvp')
+        .insert([
+          {
+            guest_name: formData.guestName,
+            attending: formData.attending,
+            song_suggestions: formData.songSuggestions,
+            // Add other fields if you created columns for them
+            // email: formData.email,
+            // number_of_guests: formData.numberOfGuests,
+            // dietary_restrictions: formData.dietaryRestrictions
+          }
+        ]);
 
-    addRSVP(formData);
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+      if (supabaseError) throw supabaseError;
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error('Error submitting RSVP:', err);
+      setError('Hubo un error al enviar tu confirmación. Por favor intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -81,6 +102,11 @@ const RSVP: React.FC = () => {
         </h2>
 
         <div className="bg-white rounded-lg shadow-lg p-8">
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">
+              <span className="block sm:inline">{error}</span>
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="guestName" className="block text-sm font-semibold text-gray-700 mb-2">
