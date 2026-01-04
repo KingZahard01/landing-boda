@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
         <p className="text-gray-300 mb-8">
           Gracias por ser parte de nuestro día especial
         </p>
-        
+
         <div className="border-t border-gray-700 pt-8">
           <p className="text-gray-400 text-sm">
-            © 2025 {weddingData.coupleNames} - Boda {new Date(weddingData.weddingDate).getFullYear()}
+            © 2019 {weddingData.coupleNames} - Boda {new Date(weddingData.weddingDate).getFullYear()}
           </p>
           <p className="text-gray-500 text-xs mt-2">
             Creado con ❤️ para nuestro día especial

@@ -5,7 +5,7 @@ import PublicLanding from './components/PublicLanding';
 // import AdminPanel from './components/AdminPanel';
 
 function App() {
-  const [isAdminMode, setIsAdminMode] = useState(false);
+  // const [isAdminMode, setIsAdminMode] = useState(false);
 
   // const toggleMode = () => {
   //   setIsAdminMode(!isAdminMode);
